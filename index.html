@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="calculos.css">
 </head>
 <body>
-    <section>
-        <h1>Script para los dias</h1>
-        <div class="calculos" id="salida"></div>
-    </section>
+    <div class="grid">
+        <div></div>
+        <div>
+            <h1>Script para los dias</h1>
+            <input type="number" id="dia">
+            <button id="btndia">DIAS</button>
+            <div id="salida"></div>
+        </div>
+        <div></div>
+    </div>
 
     <div class="grid-2">
         <div>
@@ -76,8 +82,13 @@
                 r="No existe ese dia.";
             return r;
         }
-        midia=prompt("Introducir el número de tu dia favorito ..?",1);
-        document.getElementById("salida").innerHTML ="El dia es "+dias(midia);  
+        function diadia() {
+            var midia=parseInt(document.getElementById('dia').value);
+            document.getElementById("salida").innerHTML ="El dia es "+dias(midia); 
+        }
+        var b=document.getElementById('btndia');
+        b.addEventListener('click',diadia);
+         
         
         
        //  FACTORIAL
